@@ -1,160 +1,70 @@
 # Machine Learning Fundamentals
 
-This repository contains a collection of Machine Learning practice notebooks created during my learning journey.
+**Applied ML notebooks · Regression · Classification · Clustering · Introductory Neural Networks**
 
-The goal of this repository is to document my understanding of fundamental Machine Learning concepts through hands-on exercises and guided projects using Python and scikit-learn.
+A curated collection of academic exercises and independent learning notebooks. This is a learning portfolio, not a production ML service or a benchmark suite. The aim is to make the problems, methods, source notebooks and reproducibility limitations easy to inspect.
 
-This is not a production-level project. It is a structured learning repository that shows my progress with core Machine Learning techniques such as regression, classification, clustering, model evaluation, and basic neural networks.
+## Notebook index
 
----
+| Topic | Notebook | Focus |
+| --- | --- | --- |
+| Regression | [Ames Housing linear regression](regression/linear_regression_ames_housing.ipynb) | Linear models and residential price data |
+| Regression | [Housing price prediction](regression/house_price_prediction.ipynb) | Supervised numerical prediction |
+| Regression | [Car price KNN](regression/car_price_prediction_knn.ipynb) | Nearest-neighbor regression |
+| Classification | [Admissions logistic regression](classification/logistic_regression_admissions.ipynb) | Binary classification |
+| Classification | [Automobile multiclass](classification/multiclass_classification_auto.ipynb) | Multiclass labels |
+| Classification | [Bias, variance and overfitting](classification/overfitting_bias_variance.ipynb) | Generalization |
+| Clustering | [Congress voting K-Means](clustering/kmeans_congress_votes.ipynb) | Cluster exploration |
+| Clustering | [NBA K-Means](clustering/kmeans_nba_players.ipynb) | Grouping player statistics |
+| Neural Networks | [Iris neural network](neural_networks/simple_neural_network_iris.ipynb) | Introductory classification |
+| Finance | [Stock-market prediction](stock_market_prediction/stock_market_prediction.ipynb) | Exploratory forecasting |
 
-## Topics Covered
+Each notebook has its own analytical question and inputs. Scores from unrelated datasets and splits should not be compared as if they constituted a single benchmark.
 
-- K-Nearest Neighbors
-- Linear Regression
-- Logistic Regression
-- Multi-class Classification
-- Model Evaluation
-- Cross Validation
-- Feature Engineering
-- Overfitting and Bias-Variance Tradeoff
-- K-Means Clustering
-- Basic Neural Networks
-- Stock Market Prediction
-
----
-
-## Tools & Libraries
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn
-- Jupyter Notebook
-
----
-
-## Repository Structure
+## Repository layout
 
 ```text
-machine-learning-fundamentals/
-│
-├── regression/
-│   ├── data/
-│   ├── linear_regression_ames_housing.ipynb
-│   ├── car_price_prediction_knn.ipynb
-│   └── house_price_prediction.ipynb
-│
-├── classification/
-│   ├── data/
-│   ├── logistic_regression_admissions.ipynb
-│   ├── multiclass_classification_auto.ipynb
-│   └── overfitting_bias_variance.ipynb
-│
-├── clustering/
-│   ├── data/
-│   ├── kmeans_congress_votes.ipynb
-│   └── kmeans_nba_players.ipynb
-│
-├── neural_networks/
-│   ├── data/
-│   └── simple_neural_network_iris.ipynb
-│
-├── stock_market_prediction/
-│   ├── data/
-│   └── stock_market_prediction.ipynb
-│
-├── README.md
-├── requirements.txt
-└── .gitignore
+classification/             # Logistic, multiclass and overfitting examples
+clustering/                 # K-Means exercises
+neural_networks/            # Iris example
+regression/                 # House/car price exercises
+stock_market_prediction/    # Financial series exploration
+requirements.txt            # Python notebook libraries
+```
 
-Project Sections
-Regression
-This section includes notebooks focused on predicting continuous numerical values.
+## Run locally
 
-Examples include:
-
-House price prediction
-
-Car price prediction
-
-Linear regression on housing datasets
-
-Feature selection and model evaluation
-
-Classification
-This section focuses on predicting categories or classes.
-
-Examples include:
-
-Logistic regression
-
-Admission prediction
-
-Multi-class classification
-
-Overfitting and bias-variance analysis
-
-Clustering
-This section includes unsupervised learning notebooks.
-
-Examples include:
-
-K-Means clustering
-
-Grouping similar data points
-
-Understanding patterns without labeled data
-
-Neural Networks
-This section contains basic neural network experiments.
-
-The objective is to understand the foundations of neural networks and how they can be applied to simple classification problems.
-
-Stock Market Prediction
-This section includes a guided project related to stock market data.
-
-The objective is to practice data preparation, feature engineering, and prediction techniques on time-based financial data.
-
-How to Run
-Clone the repository:
-
+```bash
 git clone https://github.com/Edam-laa/machine-learning-fundamentals.git
-Navigate to the project folder:
-
 cd machine-learning-fundamentals
-Install the required libraries:
-
-pip install -r requirements.txt
-Open the notebooks:
-
+python -m venv .venv
+# Activate your environment:
+# Windows PowerShell: .venv\Scripts\Activate.ps1
+# Linux/macOS: source .venv/bin/activate
+python -m pip install -r requirements.txt
 jupyter notebook
-Dataset Note
-The datasets used in the notebooks are placed inside the corresponding data/ folders whenever available.
+```
 
-If a dataset is missing, it should be added manually inside the correct data/ folder before running the related notebook.
+Select a notebook from the index and execute its cells sequentially. Associated datasets are typically in each topic's `data/` directory. Some notebooks may still contain local filesystem paths or environment-dependent assumptions: adjust these cautiously rather than treating the repository as fully reproducible.
 
-What I Learned
-Through these notebooks, I practiced:
+## Reviewing ML quality
 
-Preparing datasets for Machine Learning
+Meaningful questions for every notebook are: what dataset and prediction target were used, what baseline was considered, how train/test data were separated, how missing values were handled, which metrics were chosen, and whether the model might leak test information. Improvements should focus on these concerns before adding decorative badges.
 
-Cleaning and transforming data
+**Validation status:** This README update does not include a fresh run of every notebook. No accuracy, RMSE, test-pass or coverage figure is claimed without reproducible evidence.
 
-Training regression and classification models
+## Why no pipeline diagram?
 
-Evaluating model performance
+This repository is a **collection of independent notebooks**, not a shared end-to-end application. A clear index is a more truthful and useful portfolio presentation than inventing a pipeline.
 
-Understanding overfitting and underfitting
+## Next improvements
 
-Applying clustering techniques
+- Add a compact learning-objective, dataset, evaluation and limitations section to individual notebooks.
+- Normalize source paths and random seeds.
+- Run a selected subset in a clean environment and record outcomes.
+- Add baseline comparisons and proper train-only preprocessing where appropriate.
+- Keep financial forecasting claims explicitly exploratory.
 
-Building a basic understanding of neural networks
+## Context
 
-Working with real-world datasets in Python
-
-Note
-This repository represents part of my Machine Learning learning journey.
-
-It is mainly focused on building strong foundations before moving to more advanced and personal projects in Artificial Intelligence, Generative AI, Natural Language Processing, and intelligent agents.
+Educational material that supports further AI engineering and data science projects.
